@@ -1,7 +1,26 @@
 CYL_CONTEXT,,,,,cylinder working register
-CYL_CONTEXT,CYL_ID,Word,0,,cylinder serial id
-CYL_CONTEXT,STATUS,Word,1,,"cylinder status , 0:EXE 1:DONE -1:FAILED"
-CYL_CONTEXT,STATE,Word,2,,working state
+CYL_CONTEXT,STATE,Word,0,,"cylinder state , 0:IDLE 1:CHECK 2:ALARM"
+CYL_CONTEXT,COMMAND,Word,1,,"cylinder command currently, 0:NO_CMD 1:DRIVE_A 2:DRIVE_B"
+CYL_CONTEXT,TMR_SET_VALUE,Word,2,,timer set value
+CYL_CONTEXT,TMR_COUNT_VALUE,Word,3,,timer working register
+CYL_CONTEXT,A_SENSOR_USED_COUNT,Word,4,,how many sensors used to check A status
+CYL_CONTEXT,B_SENSOR_USED_COUNT,Word,5,,how many sensors used to check B status
+CYL_CONTEXT,ACT_A_1,Word,8,,
+CYL_CONTEXT,ACT_A_2,Word,9,,
+CYL_CONTEXT,ACT_A_3,Word,10,,
+CYL_CONTEXT,ACT_A_4,Word,11,,
+CYL_CONTEXT,ACT_B_1,Word,12,,
+CYL_CONTEXT,ACT_B_2,Word,13,,
+CYL_CONTEXT,ACT_B_3,Word,14,,
+CYL_CONTEXT,ACT_B_4,Word,15,,
+CYL_CONTEXT,SENSOR_A_1,Word,16,,
+CYL_CONTEXT,SENSOR_A_2,Word,17,,
+CYL_CONTEXT,SENSOR_A_3,Word,18,,
+CYL_CONTEXT,SENSOR_A_4,Word,19,,
+CYL_CONTEXT,SENSOR_B_1,Word,24,,
+CYL_CONTEXT,SENSOR_B_2,Word,25,,
+CYL_CONTEXT,SENSOR_B_3,Word,26,,
+CYL_CONTEXT,SENSOR_B_4,Word,27,,
 INDEXER_CONTEXT,,,,,indexer working register
 INDEXER_CONTEXT,STATE,Word,0,,main state
 PTP_PARA,,,,,positioning command block
