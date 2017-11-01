@@ -1,0 +1,13 @@
+Definition of Group
+Name,SIZE
+Size of Use,100
+Start register,0
+Comment,data block's size definition
+
+Definition
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,PTP_PARA,16,,,,CW00000,size of PTP_PARA
+1,ZRN_PARA,32,,,,CW00001,size of ZRN_PARA
+2,CYL_CONTEXT,32,,,,CW00002,size of CYL_PARA
+3,INDEXER_CONTEXT,128,pulse,,,CW00003,size of INDEXER_CONTEXT
+4,MAOI_CONTEXT,128,,,,CW00004,size of MAOI_CONTEXT
