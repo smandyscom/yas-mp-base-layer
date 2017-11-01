@@ -1,44 +1,49 @@
-CYL_CONTEXT,,,,,cylinder working register
-CYL_CONTEXT,STATE,Word,0,,"cylinder state , 0:IDLE 1:CHECK 2:ALARM"
-CYL_CONTEXT,COMMAND,Word,1,,"cylinder command currently, 0:NO_CMD 1:DRIVE_A 2:DRIVE_B"
-CYL_CONTEXT,TMR_SET_VALUE,Word,2,,timer set value
-CYL_CONTEXT,TMR_COUNT_VALUE,Word,3,,timer working register
-CYL_CONTEXT,A_SENSOR_USED_COUNT,Word,4,,how many sensors used to check A status
-CYL_CONTEXT,B_SENSOR_USED_COUNT,Word,5,,how many sensors used to check B status
-CYL_CONTEXT,ACT_A_1,Word,8,,
-CYL_CONTEXT,ACT_A_2,Word,9,,
-CYL_CONTEXT,ACT_A_3,Word,10,,
-CYL_CONTEXT,ACT_A_4,Word,11,,
-CYL_CONTEXT,ACT_B_1,Word,12,,
-CYL_CONTEXT,ACT_B_2,Word,13,,
-CYL_CONTEXT,ACT_B_3,Word,14,,
-CYL_CONTEXT,ACT_B_4,Word,15,,
-CYL_CONTEXT,SENSOR_A_1,Word,16,,
-CYL_CONTEXT,SENSOR_A_2,Word,17,,
-CYL_CONTEXT,SENSOR_A_3,Word,18,,
-CYL_CONTEXT,SENSOR_A_4,Word,19,,
-CYL_CONTEXT,SENSOR_B_1,Word,24,,
-CYL_CONTEXT,SENSOR_B_2,Word,25,,
-CYL_CONTEXT,SENSOR_B_3,Word,26,,
-CYL_CONTEXT,SENSOR_B_4,Word,27,,
-INDEXER_CONTEXT,,,,,indexer working register
-INDEXER_CONTEXT,STATE,Word,0,,main state
-PTP_PARA,,,,,positioning command block
-PTP_PARA,AXIS_ID,Word,0,,decimal serial ID
+CYL_CONTEXT,,,,,"cylinder working register"
+CYL_CONTEXT,MOR_WARN,Bit,0,0,"warning"
+CYL_CONTEXT,MOR_GROUP_A,Bit,0,1,"group A status"
+CYL_CONTEXT,MOR_GROUP_B,Bit,0,2,"group B status"
+CYL_CONTEXT,CTL_SUPPRESS,Bit,0,3,"suppress warning"
+CYL_CONTEXT,INT_TMR_ON,Bit,0,4,"internal use , timer on bit"
+CYL_CONTEXT,STATUS_WORD,Word,0,,"status word , internal/control/monitor included"
+CYL_CONTEXT,COMMAND_CACHED,Word,1,,"cached last command, 0:NO_CMD 1:DRIVE_A 2:DRIVE_B"
+CYL_CONTEXT,TMR_SET_VALUE,Word,2,,"timer set value"
+CYL_CONTEXT,TMR_COUNT_VALUE,Word,3,,"timer working register"
+CYL_CONTEXT,A_SENSOR_USED_COUNT,Word,4,,"how many sensors used to check A status"
+CYL_CONTEXT,B_SENSOR_USED_COUNT,Word,5,,"how many sensors used to check B status"
+CYL_CONTEXT,ACT_A_1,Word,8,,""
+CYL_CONTEXT,ACT_A_2,Word,9,,""
+CYL_CONTEXT,ACT_A_3,Word,10,,""
+CYL_CONTEXT,ACT_A_4,Word,11,,""
+CYL_CONTEXT,ACT_B_1,Word,12,,""
+CYL_CONTEXT,ACT_B_2,Word,13,,""
+CYL_CONTEXT,ACT_B_3,Word,14,,""
+CYL_CONTEXT,ACT_B_4,Word,15,,""
+CYL_CONTEXT,SENSOR_A_1,Word,16,,""
+CYL_CONTEXT,SENSOR_A_2,Word,17,,""
+CYL_CONTEXT,SENSOR_A_3,Word,18,,""
+CYL_CONTEXT,SENSOR_A_4,Word,19,,""
+CYL_CONTEXT,SENSOR_B_1,Word,24,,""
+CYL_CONTEXT,SENSOR_B_2,Word,25,,""
+CYL_CONTEXT,SENSOR_B_3,Word,26,,""
+CYL_CONTEXT,SENSOR_B_4,Word,27,,""
+INDEXER_CONTEXT,,,,,"indexer working register"
+INDEXER_CONTEXT,STATE,Word,0,,"main state"
+PTP_PARA,,,,,"positioning command block"
+PTP_PARA,AXIS_ID,Word,0,,"decimal serial ID"
 PTP_PARA,CONTROL_WORD,Word,1,,"0x0001:ABS,0x0000:REL"
-PTP_PARA,COORD,Long,2,,unit
-PTP_PARA,SPD,Long,4,,unit/seconds
-PTP_PARA,ACC_T,Long,6,,in milliseconds
-PTP_PARA,DEC_T,Long,8,,in milliseconds
-PTP_PARA,TOR_LIMIT,Long,10,,in 0.01%
-ZRN_PARA,,,,,zero returning command block
-ZRN_PARA,AXIS_ID,Word,0,,decimal serial ID
+PTP_PARA,COORD,Long,2,,"unit"
+PTP_PARA,SPD,Long,4,,"unit/seconds"
+PTP_PARA,ACC_T,Long,6,,"in milliseconds"
+PTP_PARA,DEC_T,Long,8,,"in milliseconds"
+PTP_PARA,TOR_LIMIT,Long,10,,"in 0.01%"
+ZRN_PARA,,,,,"zero returning command block"
+ZRN_PARA,AXIS_ID,Word,0,,"decimal serial ID"
 ZRN_PARA,CONTROL_WORD,Word,1,,"0x0001:FWD,0x0000:REV"
-ZRN_PARA,COORD,Long,2,,zero point return travel distance
-ZRN_PARA,SPD,Long,4,,unit/seconds
-ZRN_PARA,ACC_T,Long,6,,in milliseconds
-ZRN_PARA,DEC_T,Long,8,,in milliseconds
-ZRN_PARA,TOR_LIMIT,Long,10,,in 0.01%
-ZRN_PARA,METHOD,Word,12,,0:DEC1+C-Pulse
-ZRN_PARA,SPD_APPROACH,Long,14,,unit/seconds
-ZRN_PARA,SPD_CREEP,Long,16,,unit/seconds
+ZRN_PARA,COORD,Long,2,,"zero point return travel distance"
+ZRN_PARA,SPD,Long,4,,"unit/seconds"
+ZRN_PARA,ACC_T,Long,6,,"in milliseconds"
+ZRN_PARA,DEC_T,Long,8,,"in milliseconds"
+ZRN_PARA,TOR_LIMIT,Long,10,,"in 0.01%"
+ZRN_PARA,METHOD,Word,12,,"0:DEC1+C-Pulse"
+ZRN_PARA,SPD_APPROACH,Long,14,,"unit/seconds"
+ZRN_PARA,SPD_CREEP,Long,16,,"unit/seconds"

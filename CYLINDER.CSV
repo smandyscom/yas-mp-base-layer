@@ -1,0 +1,11 @@
+Definition of Group
+Name,CYLINDER
+Size of Use,100
+Start register,100
+Comment,cylinder context related definitions
+
+Definition
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,CMD_A,1,0,,,CW00103,drive cylinder to A side (off
+1,CMD_B,2,0,,,CW00104,drive cylinder to B side (on
+2,CMD_NO,0,0,,,CW00105,empty command
