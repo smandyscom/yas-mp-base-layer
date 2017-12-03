@@ -1,0 +1,12 @@
+Definition of Group
+Name,MAT_SYNC
+Size of Use,100
+Start register,300
+Comment,mateiral sync mode
+
+Definition
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,UPDATE_HEADER,1,0,,,CW00300,update header only
+1,UPDATE_BLOCK,2,0,,,CW00301,update whole block
+2,CREATE,4,0,,,CW00302,require a new id
+3,QUERY,8,0,,,CW00303,from DB to PLC

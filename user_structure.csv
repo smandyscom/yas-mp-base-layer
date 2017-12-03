@@ -26,66 +26,88 @@ CYL_CONTEXT,SENSOR_B_1,Word,24,,
 CYL_CONTEXT,SENSOR_B_2,Word,25,,
 CYL_CONTEXT,SENSOR_B_3,Word,26,,
 CYL_CONTEXT,SENSOR_B_4,Word,27,,
-MATERIAL,,,,,
-MATERIAL,ONLINE,BIT,0,0,
-MATERIAL,ACT,BIT,0,1,
-MATERIAL,SYNC_ACTION,WORD,1,,
-MATERIAL,IS_VALID,WORD,2,,whether existed in corresponding location
-MATERIAL,ONLINE,BIT,8,0,
-MATERIAL,DONE,BIT,8,1,
-MATERIAL,MATERIAL_ID,LONG,16,,
-MATERIAL,GUID,LONG,18,,global unit id
-MATERIAL,WILD_HEAD,WORD,20,,
-MATERIAL,WILD_END,WORD,127,,
-PTP_PARA,,,,,positioning command block
-PTP_PARA,AXIS_ID,Word,0,,decimal serial ID
-PTP_PARA,CONTROL_WORD,Word,1,,"0x0001:ABS,0x0000:REL"
-PTP_PARA,COORD,Long,2,,unit
-PTP_PARA,SPD,Long,4,,unit/seconds
-PTP_PARA,ACC_T,Long,6,,in milliseconds
-PTP_PARA,DEC_T,Long,8,,in milliseconds
-PTP_PARA,TOR_LIMIT,Long,10,,in 0.01%
-UNIT_GENERIC,,,,,context definition for generic assembly
-UNIT_GENERIC,PARENT_LUID,Word,0,,parent id
-UNIT_GENERIC,STATE,Word,1,,current working state
-UNIT_GENERIC,ALARM_CODE,Word,2,,"alarm code , 0 : no alarm"
-UNIT_GENERIC,EN_STEP,Bit,3,0,enable manual step control
-UNIT_GENERIC,TRIG_STEP,Bit,3,1,trigger step control
-UNIT_GENERIC,LSID,Word,6,,material header index
-UNIT_GENERIC,SLOT_COUNT,Word,7,,how much material hold in this station
-UNIT_GENERIC,DERIVED_DATA_HEAD,Word,16,,
-UNIT_GENERIC,DERIVED_DATA_END,Word,63,,
-UNIT_INDEXER_MASTER,,,,,indexer working register
-UNIT_INDEXER_MASTER,PARENT_LUID,Word,0,,parent id
-UNIT_INDEXER_MASTER,STATE,Word,1,,current working state
-UNIT_INDEXER_MASTER,ALARM_CODE,Word,2,,"alarm code , 0 : no alarm"
-UNIT_INDEXER_MASTER,EN_STEP,Bit,3,0,enable manual step control
-UNIT_INDEXER_MASTER,TRIG_STEP,Bit,3,1,trigger step control
-UNIT_INDEXER_MASTER,HEAD_LSID,Word,6,,material header index
-UNIT_INDEXER_MASTER,SLOT_COUNT,Word,7,,how much material hold in this station
-UNIT_INDEXER_MASTER,UPSTREAM_GUID,Long,16,,"if master is not valid , imply this is head indexer"
-UNIT_INDEXER_MASTER,SLAVE_LINKAGE_STATUS,Long,18,,32 slaves at most
-UNIT_INDEXER_MASTER,SLAVE_WORKING_SIGNAL,Long,20,,"on: working , off: done"
-UNIT_INDEXER_MASTER,MOTION_BANK_INDEX,Word,32,,the command block index to perform physical shifting
-UNIT_INDEXER_SLAVE,,,,,indexer slave working register
-UNIT_INDEXER_SLAVE,PARENT_LUID,Word,0,,parent id
-UNIT_INDEXER_SLAVE,STATE,Word,1,,current working state
-UNIT_INDEXER_SLAVE,ALARM_CODE,Word,2,,"alarm code , 0 : no alarm"
-UNIT_INDEXER_SLAVE,EN_STEP,Bit,3,0,enable manual step control
-UNIT_INDEXER_SLAVE,TRIG_STEP,Bit,3,1,trigger step control
-UNIT_INDEXER_SLAVE,LSID,Word,6,,material header index
-UNIT_INDEXER_SLAVE,SLOT_COUNT,Word,7,,how much material hold in this station
-UNIT_INDEXER_SLAVE,MASTER_GUID,Long,16,,
-UNIT_INDEXER_SLAVE,OBJECT_LSID,Word,18,,
-UNIT_INDEXER_SLAVE,SYNC_MODE,Word,19,,
-ZRN_PARA,,,,,zero returning command block
-ZRN_PARA,AXIS_ID,Word,0,,decimal serial ID
-ZRN_PARA,CONTROL_WORD,Word,1,,"0x0001:FWD,0x0000:REV"
-ZRN_PARA,COORD,Long,2,,zero point return travel distance
-ZRN_PARA,SPD,Long,4,,unit/seconds
-ZRN_PARA,ACC_T,Long,6,,in milliseconds
-ZRN_PARA,DEC_T,Long,8,,in milliseconds
-ZRN_PARA,TOR_LIMIT,Long,10,,in 0.01%
-ZRN_PARA,METHOD,Word,12,,0:DEC1+C-Pulse
-ZRN_PARA,SPD_APPROACH,Long,14,,unit/seconds
-ZRN_PARA,SPD_CREEP,Long,16,,unit/seconds
+DEF_COMMAND_BASE,AXIS_ID,Word,0,,decimal serial ID
+DEF_COMMAND_BASE,COMMAND_TYPE,Word,1,,"0:NOP
+1:POS-I
+3:ZRET
+7:FEED
+64:POS-II
+65:POS-III"
+DEF_COMMAND_BASE,SPD,Long,2,,unit/seconds
+DEF_COMMAND_BASE,ACC_T,Long,4,,in milliseconds
+DEF_COMMAND_BASE,DEC_T,Long,6,,in milliseconds
+DEF_COMMAND_BASE,TOR_LIMIT,Long,8,,in 0.01%
+DEF_COMMAND_ZRET,FED_REV,Bit,16,0,"0x0001:FWD,0x0000:REV"
+DEF_COMMAND_POSI,ABS_REL,Bit,16,0,"1:ABS,0:REL"
+DEF_COMMAND_POSI,SETTLE_REACH,Bit,16,1,"1:SETTLE,0:REACH"
+DEF_COMMAND_POSII,ABS_REL,Bit,16,0,"1:ABS,0:REL"
+DEF_COMMAND_POSII,SETTLE_REACH,Bit,16,1,"1:SETTLE,0:REACH"
+DEF_COMMAND_POSIII,ABS_REL,Bit,16,0,"1:ABS,0:REL"
+DEF_COMMAND_POSIII,SETTLE_REACH,Bit,16,1,"1:SETTLE,0:REACH"
+DEF_COMMAND_ZRET,METHOD,Word,17,,0:DEC1+C-Pulse
+DEF_COMMAND_POSI,COORD,Long,18,,zero point return travel distance
+DEF_COMMAND_ZRET,OFFSET,Long,18,,postion offset after reached home
+DEF_COMMAND_POSII,COORD1,Long,18,,1st axis
+DEF_COMMAND_POSIII,COORD1,Long,18,,1st axis
+DEF_COMMAND_ZRET,SPD_CREEP,Long,20,,unit/seconds
+DEF_COMMAND_POSIII,COORD2,Long,20,,2nd axis
+DEF_COMMAND_POSII,COORD2,Long,20,,2nd axis
+DEF_COMMAND_ZRET,SPD_APPROACH,Long,22,,unit/seconds
+DEF_COMMAND_POSIII,COORD3,Long,22,,3rd axis
+DEF_COMMAND_FEED,CONTROL_WORD,Word,16,,travel direction
+DEF_UNIT_BASE,PARENT_LUID,WORD,0,0,parent's assembly id
+DEF_UNIT_BASE,STATE,WORD,1,0,current state
+DEF_UNIT_BASE,ALARM_CODE,WORD,2,0,"alarm code , 0: No error"
+DEF_UNIT_BASE,EN_STEP,BIT,3,0,enable step control
+DEF_UNIT_BASE,TRIG_STEP,BIT,3,1,trigger step control
+DEF_UNIT_BASE,TRIG_PAUSE,BIT,3,2,trigger pause
+DEF_UNIT_BASE,HEAD_LSID,WORD,6,0,the linked index of material-location to first slave
+DEF_UNIT_BASE,SLOT_COUNT,WORD,7,0,how many material this indexer hold
+DEF_UNIT_BASE,DERIVED_DATA_HEAD,WORD,16,0,
+DEF_UNIT_BASE,DERIVED_DATA_END,WORD,63,0,
+DEF_UNIT_INDEXER_MASTER,UPSTREAM_GUID,Long,16,,"global unit id , used to perform simaltanouse moving"
+DEF_UNIT_INDEXER_MASTER,SLAVE_LINKAGE_STATUS,Long,18,,whether this location linked with some slave
+DEF_UNIT_INDEXER_MASTER,SLAVE_WORKING_SIGNAL,Long,20,,the slave working signal 
+DEF_UNIT_INDEXER_MASTER,MOTION_BANK_INDEX,Word,32,,the command block index to perform physical shifting
+DEF_UNIT_INDEXER_SLAVE,MASTER_GUID,DWORD,16,,
+DEF_UNIT_INDEXER_SLAVE,OBJECT_LSID,WORD,18,,local slot id
+DEF_UNIT_INDEXER_SLAVE,SYNC_MODE,WORD,19,,"0x01ACTION_UPDATE_HEADER
+0x02ACTION_UPDATE_BLOCK
+0x04ACTION_CREATE
+0x08ACTION_QUERY"
+DEF_UNIT_ROOT,ROOT_ID,Long,16,,"root id , used to distinguish different controller"
+DEF_UNIT_ROOT,TOTAL_SLOT_COUNT,WORD,17,,how much slots this controller held
+DEF_MANUAL,ONLINE,BIT,0,0,manual mode requiring
+DEF_MANUAL,DONE,BIT,0,1,"1:running , 0:idle"
+DEF_MANUAL,AXIS_ADR,WORD,1,,the axis currently monitoring
+DEF_MANUAL,POS_COMMAND,Long,2,,position reference
+DEF_MANUAL,POS_FEEDBACK,Long,4,,postion feedback
+DEF_MANUAL,SPD_FEEDBACK,Long,6,,speed feedback
+DEF_MANUAL,TOR_FEEDBACK,Long,8,,torque feedback
+DEF_MANUAL,ONLINE,BIT,16,0,manual mode engaged
+DEF_MANUAL,RUN,BIT,16,1,"1:engaged , 0:unengaged or waiting"
+DEF_MANUAL,MODE,WORD,17,0,"0:PTP (JOG
+1:ZRN
+2:MPG
+15:DOWNLOAD(PLC<-
+16:UPLOAD(PLC->"
+DEF_MANUAL,COMMIT_CONTENT,WORD,18,0,"0:AXIS
+1:CYL
+2:PTP
+3:ZRN"
+DEF_MANUAL,COMMIT_INDEX,WORD,19,0,Indicate the bank index going to manipulate
+DEF_MANUAL,BLOCK_HEAD,WORD,32,0,
+DEF_MANUAL,BLOCK_END,WORD,128,0,
+DEF_MATERIAL,ONLINE,BIT,0,0,
+DEF_MATERIAL,ACT,BIT,0,1,
+DEF_MATERIAL,SYNC_ACTION,WORD,1,0,"0x01ACTION_UPDATE_HEADER
+0x02ACTION_UPDATE_BLOCK
+0x04ACTION_CREATE
+0x08ACTION_QUERY"
+DEF_MATERIAL,IS_VALID,WORD,2,0,whether existed in corresponding location
+DEF_MATERIAL,ONLINE,BIT,8,0,
+DEF_MATERIAL,DONE,BIT,8,1,
+DEF_MATERIAL,MATERIAL_ID,LONG,16,0,
+DEF_MATERIAL,GUID,LONG,18,0,global unit id
+DEF_MATERIAL,WILD_HEAD,WORD,20,0,
+DEF_MATERIAL,WILD_END,WORD,127,0,

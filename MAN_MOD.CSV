@@ -1,0 +1,11 @@
+Definition of Group
+Name,MAN_MOD
+Size of Use,100
+Start register,200
+Comment,manual mode definition
+
+Definition
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,PTP_JOG_MODE,0,0,,,CW00200,PTP or JOG mode
+1,ZRN_MODE,1,0,,,CW00201,ZRN mode
+2,MPG_MODE,2,0,,,CW00202,MPG (Manual Pulse Generator

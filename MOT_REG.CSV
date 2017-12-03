@@ -1,0 +1,9 @@
+Definition of Group,,,,,,,
+Name,MOT_REG,,,,,,
+Size of Use,100,,,,,,
+Start register,400,,,,,,
+Comment,MIII motion register definition,,,,,,
+,,,,,,,
+Definition,,,,,,,
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+,,,,,,CW0400,

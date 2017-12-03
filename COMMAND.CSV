@@ -1,0 +1,13 @@
+Definition of Group,,,,,,,
+Name,COMMAND,,,,,,
+Size of Use,100,,,,,,
+Start register,500,,,,,,
+Comment,MIII Command definition,,,,,,
+,,,,,,,
+Definition,,,,,,,
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,ZRET,3,,,,CW0500,ZRET
+1,POSI,1,,,,CW0501,POSI
+2,POSII,64,,,,CW0502,POSII
+3,POSIII,65,,,,CW0503,POSIII
+4,FEED,7,,,,CW0504,FEED
