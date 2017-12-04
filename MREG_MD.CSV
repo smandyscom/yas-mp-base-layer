@@ -1,0 +1,18 @@
+Definition of Group
+Name,MREG_MD
+Size of Use,100
+Start register,700
+Comment,motion register read/write modes
+
+Definition
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,R_IW,0,0,,,CW00700,monitor parameters/word
+1,R_IL,1,0,,,CW00701,monitor parameters/long
+2,R_OW,256,0,,,CW00702,setting parameters/word
+3,R_OL,257,0,,,CW00703,setting parameters/long
+4,W_WW,0,0,,,CW00704,write/word
+5,W_WL,1,0,,,CW00705,write/long
+6,W_ORW,256,0,,,CW00706,or/word
+7,W_ORL,257,0,,,CW00707,or/long
+8,W_ANDW,512,0,,,CW00708,and/word
+9,W_ANDL,513,0,,,CW00709,and/long
