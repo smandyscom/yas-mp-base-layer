@@ -6,6 +6,6 @@ Comment,manual mode definition
 
 Definition
 No.,Name,Value,Unit,Lower,Upper,Register,Comment
-0,PTP_JOG_MODE,0,0,,,CW00200,PTP or JOG mode
-1,ZRN_MODE,1,0,,,CW00201,ZRN mode
-2,MPG_MODE,2,0,,,CW00202,MPG (Manual Pulse Generator
+0,BLOCK_COMMAND,0,0,,,CW00200,block command execution
+1,DOWNLOAD,15,0,,,CW00201,DB->PLC
+2,UPLOAD,16,0,,,CW00202,PLC->DB
