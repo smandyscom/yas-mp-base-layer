@@ -1,0 +1,18 @@
+Definition of Group,,,,,,,
+Name,ADR,,,,,,
+Size of Use,100,,,,,,
+Start register,900,,,,,,
+Comment,Data block start address,,,,,,
+,,,,,,,
+Definition,,,,,,,
+No.,Name,Value,Unit,Lower,Upper,Register,Comment
+0,AXE_INSTANCE_0,0,0,,,CL00900,Axis instance contexts/Axis Group
+1,CYL_INSTANCE_0,32768,0,,,CL00902,Cylinder instance contexts
+2,COMMAND_BANK_0,65536,0,,,CL00904,Command bank
+3,MANUAL_CXT,131072,0,,,CL00906,Manual control context
+4,HS0,131328,0,,,CL00908,handshake context with AOI system
+5,MATERIAL_LOC_0,163840,0,,,CL00910,Material-Location information
+6,W_UNIT_INT_0,196608,0,,,CL00912,working unit context
+7,MATERIAL_LOC_INT_0,229376,0,,,CL00914,Material-Location information
+8,W_UNIT_EXT1_0,294912,0,,,CL00916,working unit context
+9,MATERIAL_LOC_EXT1_0,327680,0,,,CL00918,Material-Location information
