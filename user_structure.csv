@@ -131,6 +131,8 @@ DEF_UNIT_INDEXER_MASTER,SLAVE_LINKAGE_STATUS,Long,18,,"whether this location lin
 DEF_UNIT_INDEXER_MASTER,SLAVE_WORKING_SIGNAL,Long,20,,"the slave working signal"
 DEF_UNIT_INDEXER_MASTER,IS_SYNC_ENGAGED,Bit,22,0,"whether going to sync"
 DEF_UNIT_INDEXER_MASTER,MOTION_BANK_INDEX,Word,32,,"the command block index to perform physical shifting"
+DEF_UNIT_INDEXER_MASTER,MAT_IS_VALID_STATUS,Long,34,,"is valid status for all material slot related to this master"
+DEF_UNIT_INDEXER_MASTER,MAT_IS_VALID_WORKING,Long,36,,"working register for mat sync"
 DEF_UNIT_INDEXER_SLAVE,,,,,""
 DEF_UNIT_INDEXER_SLAVE,GUID_MASTER,Long,16,,""
 PROTOCAL_RECEVIER_SENDER,,,,,""
